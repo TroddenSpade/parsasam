@@ -1,0 +1,139 @@
+
+  .wrapper {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+  }
+  .player-controls {
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 40px;
+    height: 1em;
+    position: relative;
+    text-decoration: none;
+    width: 1em;
+    -webkit-transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
+  }
+  .player-controls .audio-label {
+    line-height: 1;
+    position: absolute;
+    right: 1.35em;
+    text-align: right;
+    text-transform: uppercase;
+    top: -0.4em;
+  }
+  .player-controls .audio-label span {
+    font-size: 18px;
+  }
+  .player-controls .audio-label span small {
+    display: block;
+    font-size: 0.83em;
+  }
+  .player-controls .play,
+  .player-controls .pause {
+    display: block;
+    background: url('http://thiagovieira.com/images/play.svg') no-repeat 0 0;
+    background-size: 100% 100%;
+    height: 1em;
+    position: absolute;
+    width: 1em;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    z-index: 5;
+  }
+  .player-controls .play::before,
+  .player-controls .pause::before,
+  .player-controls .play::after,
+  .player-controls .pause::after {
+    -webkit-border-radius: 1000px;
+    -moz-border-radius: 1000px;
+    border-radius: 1000px;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1em;
+    right: 0;
+    top: 0;
+    width: 1em;
+    z-index: 0;
+  }
+  .player-controls .play::before {
+    box-shadow: transparent;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+  }
+  .player-controls .pause {
+    background-image: url('http://thiagovieira.com/images/pause.svg');
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  .player-controls.playing .play {
+    opacity: 0;
+  }
+  .player-controls.playing .pause {
+    opacity: 1;
+  }
+  .player-controls.playing .pause::before {
+    -moz-animation: audio1 1.5s infinite ease-in-out;
+    -o-animation: audio1 1.5s infinite ease-in-out;
+    -webkit-animation: audio1 1.5s infinite ease-in-out;
+    animation: audio1 1.5s infinite ease-in-out;
+  }
+  .player-controls.playing .pause::after {
+    -moz-animation: audio2 2.2s infinite ease-in-out;
+    -o-animation: audio2 2.2s infinite ease-in-out;
+    -webkit-animation: audio2 2.2s infinite ease-in-out;
+    animation: audio2 2.2s infinite ease-in-out;
+  }
+  .player-controls:hover {
+    transform: scale(1.1);
+  }
+  .player-controls:hover .play::before {
+    box-shadow: 0 0 12px rgba(255, 238, 125, 0.8);
+  }
+  .animate-audio1 {
+    -moz-animation: audio1 1.5s infinite ease-in-out;
+    -o-animation: audio1 1.5s infinite ease-in-out;
+    -webkit-animation: audio1 1.5s infinite ease-in-out;
+    animation: audio1 1.5s infinite ease-in-out;
+  }
+  @keyframes audio1 {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0.4em rgba(255, 255, 255, 0.4);
+    }
+    25% {
+      box-shadow: 0 0 0 0.15em rgba(255, 255, 255, 0.15);
+    }
+    50% {
+      box-shadow: 0 0 0 0.55em rgba(255, 255, 255, 0.55);
+    }
+    75% {
+      box-shadow: 0 0 0 0.25em rgba(255, 255, 255, 0.25);
+    }
+  }
+  .animate-audio2 {
+    -moz-animation: audio2 2.2s infinite ease-in-out;
+    -o-animation: audio2 2.2s infinite ease-in-out;
+    -webkit-animation: audio2 2.2s infinite ease-in-out;
+    animation: audio2 2.2s infinite ease-in-out;
+  }
+  @keyframes audio2 {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0.25em rgba(255, 255, 255, 0.15);
+    }
+    25% {
+      box-shadow: 0 0 0 0.4em rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 0 0.15em rgba(255, 255, 255, 0.05);
+    }
+    75% {
+      box-shadow: 0 0 0 0.55em rgba(255, 255, 255, 0.45);
+    }
+  }
