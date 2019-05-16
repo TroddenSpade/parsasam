@@ -1,0 +1,12 @@
+.main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    background: url("../assets/bg2.jpg") center;
+    background-size: cover;
+    height : 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
