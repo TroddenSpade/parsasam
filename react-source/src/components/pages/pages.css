@@ -1,0 +1,18 @@
+.component {
+    display: flex;
+    flex: 1;
+    background-color: #1b0b38;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 2ch;
+}
+.first-component{
+    background-color: transparent;
+}
+
+h2{
+    color: white;
+}

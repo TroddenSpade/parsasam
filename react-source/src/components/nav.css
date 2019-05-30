@@ -1,35 +1,33 @@
 .navbar {
-    overflow: hidden;
-    background-color: transparent;
-    position: fixed; 
     width: 20%;
     height: 100vh; 
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #1b0b38;
 }
 @font-face {
-    font-family: 'Lazer84';
+    font-family: 'Neoneon';
     font-style: normal;
-    src: url('../assets/fonts/Lazer84.ttf');
+    src: url('../assets/fonts/Neoneon.otf');
 }
 
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
 div.container
 {
-    font-family: 'Lazer84';
+    font-family: 'Neoneon';
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    border-radius: 3ch;
 }
 
 div.container a
 {
     text-decoration: none;
-    font: 20px "Lazer84";
+    font: 30px "Neoneon";
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
@@ -66,4 +64,8 @@ div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
 
 .icon{
     margin: 1vh
+}
+
+.icon:hover{
+    transform: scale(1.1);
 }

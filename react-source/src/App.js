@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Main from './components/main.js'; 
-import Nav from './components/nav.js';
 
 class App extends Component {
 
@@ -10,7 +9,6 @@ class App extends Component {
     return (
       <div className="App">
         <Main/>
-        <Nav />
       </div>
     );
   }
