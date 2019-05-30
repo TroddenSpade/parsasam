@@ -2,8 +2,8 @@
   .wrapper {
     display: block;
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 3%;
+    right: 3%;
   }
   .player-controls {
     color: #FFF;

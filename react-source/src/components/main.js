@@ -23,7 +23,6 @@ export default class Main extends Component {
         />
         <div className="scrollerContainer">
           <ReactPageScroller
-            className="scrollerContainer"
             ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}
             containerWidth={"70vw"} containerHeight={"80vh"}
           >

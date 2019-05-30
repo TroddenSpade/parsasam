@@ -19,3 +19,7 @@
     background-size: cover;
     outline: none;
 }
+
+div{
+    outline: none;
+}

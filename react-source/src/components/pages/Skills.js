@@ -3,7 +3,7 @@ import './pages.css' ;
 
 export default () => {
     return (
-        <div className="component fourth-component">
+        <div className="reactPageScrollerComponent fourth-component">
             <h2>Skills</h2>
         </div>
     )

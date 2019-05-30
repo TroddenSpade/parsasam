@@ -4,7 +4,7 @@ import pic from '../../assets/logo.png';
 
 export default () => {
     return (
-        <div className="component first-component">
+        <div className="reactPageScrollerComponent first-component">
             <img className="img" src={pic} alt=""/>
         </div>
     )
