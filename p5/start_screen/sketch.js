@@ -4,11 +4,15 @@ var stars = [];
 let hLines = 60;
 let nStars = 100;
 
+p5.disableFriendlyErrors = true;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for (var i = 0; i < 30; i++) {
-    lines[i] = new Line(i);
+  var render = sqrt(532/54*windowHeight);
+  for (var i = 0; i < 10; i++) {
+    lines[i] = new Line(i*render/30);
   }
+  lines[0]= new Line(0);
   for (var i = 0; i < nStars; i++) {
     stars[i] = new Star();
   }
@@ -16,6 +20,14 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  var render = sqrt(532/54*windowHeight);
+  for (var i = 0; i < 10; i++) {
+    lines[i] = new Line(i*render/30);
+  }
+  lines[0]= new Line(0);
+  for (var i = 0; i < nStars; i++) {
+    stars[i] = new Star();
+  }
 }
 
 function draw() {
@@ -39,6 +51,9 @@ function draw() {
     stars[i].update();
     stars[i].show();
   }
+  let fps = frameRate();
+  fill(255, 255, 255);
+  text("FPS: " + fps.toFixed(2), 10, height - 10);
 }
 
 function quit(){

@@ -1,16 +1,16 @@
 function Line(i) {
   this.x = 0;
   this.y = height / 2;
-  this.dy = (height * 548) / 1080;
-  let speed = i*(-0.4);
+  this.y = (height * 548) / 1080;
+  let speed = -i*(0.3);
 
   this.update = function() {
     speed += (0.1);
     if(speed>=0){
-      this.dy = this.dy + speed;
+      this.y = this.y + speed;
     }
-    if (this.dy >= height) {
-      this.dy = (height * 548) / 1080;
+    if (this.y >= height) {
+      this.y = (height * 548) / 1080;
       speed = 0;
     }
   };
@@ -18,7 +18,7 @@ function Line(i) {
   this.show = function() {
     if(speed>=0){
       fill(255, 0, 0);
-      line(this.x, this.dy, width, this.dy);
+      line(this.x, this.y, width, this.y);
     }
   };
 }
