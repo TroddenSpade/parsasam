@@ -1,7 +1,7 @@
 .reactPageScrollerComponent {
     display: flex;
     flex: 1;
-    background-color: #1b0b38;
+    background-color: transparent;
     justify-content: center;
     align-items: center;
     width: 100%;

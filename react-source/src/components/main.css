@@ -5,7 +5,15 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    /* background: url("../assets/bg2.jpg") center; */
     align-items: center;
+    background: linear-gradient(130deg, #000000, #221e27, #28293a, #ca003b, #982048);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 11s ease infinite;
+    -moz-animation: AnimationName 11s ease infinite;
+    -o-animation: AnimationName 11s ease infinite;
+    animation: AnimationName 11s ease infinite;
 }
 
 .scrollerContainer{
@@ -15,11 +23,32 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    background: url("../assets/bg2.jpg") center;
     background-size: cover;
     outline: none;
 }
 
 div{
     outline: none;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
 }

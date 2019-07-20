@@ -1,11 +1,11 @@
 .navbar {
-    width: 20%;
+    width: 10%;
     height: 100vh; 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: #1b0b38;
+    background-color: transparent;
 }
 @font-face {
     font-family: 'Neoneon';
@@ -27,7 +27,7 @@ div.container
 div.container a
 {
     text-decoration: none;
-    font: 30px "Neoneon";
+    font: 25px "Neoneon";
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
@@ -45,7 +45,13 @@ div.highlightTextOut a:before, div.highlightTextIn a:before
     transition: all 0.3s;
     transform: scale(0.8);
     opacity: 0;
-} 
+}
+
+a:active {
+    color: rgb(236, 106, 219);
+    transition: transform 0.5s;
+    transform: scale(1.1);
+}
 
 div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
 {
@@ -55,7 +61,8 @@ div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
 
 .img{
     transition: transform 0.5s;
-    width: 30vh;
+    width: 10vh;
+    margin: 10px;
 }
 
 .img:hover{
