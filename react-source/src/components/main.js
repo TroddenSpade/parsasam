@@ -11,6 +11,20 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 
 export default class Main extends Component {
+  state = {
+    page:0,
+  }
+
+  pageOnChange = (num)=>{
+    this.setState({
+      page:num
+    });
+  }
+
+  getPage = ()=>{
+    return this.state.page-1;
+  }
+
   render() {
     return (
       <div className="main">
@@ -20,11 +34,12 @@ export default class Main extends Component {
           third={()=>this.reactPageScroller.goToPage(2)}
           forth={()=>this.reactPageScroller.goToPage(3)}
           fifth={()=>this.reactPageScroller.goToPage(4)}
+          getPage={this.getPage}
         />
         <div className="scrollerContainer">
           <ReactPageScroller
             ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}
-            containerWidth={"70vw"} containerHeight={"80vh"}
+            containerWidth={"90vw"} containerHeight={"100vh"}
           >
             <Home/>
             <About/>
