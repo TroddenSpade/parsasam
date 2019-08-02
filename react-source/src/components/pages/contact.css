@@ -1,0 +1,198 @@
+.submit{
+    width: 30%;
+    transition: transform 0.5s;
+}
+
+.submit:hover,
+.submit:focus {
+    transform: scale(1.1);
+}
+
+.submit:active {
+    opacity: 0.8;
+}
+
+.button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-size: 100% 100%;
+}
+
+.email {
+    width: 60%;
+    height: 1em;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    -webkit-animation-name: email-animation;
+    -webkit-animation-duration: 4s;
+    animation-name: email-animation;
+    animation-duration: 4s;
+}
+.input {
+    width: 40%;
+    height: 1em;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    -webkit-animation-name: input-animation;
+    -webkit-animation-duration: 4s;
+    animation-name: input-animation;
+    animation-duration: 4s;
+}
+.massage {
+    width: 80%;
+    height: 20vh;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-animation-name: massage-animation;
+    -webkit-animation-duration: 4s;
+    animation-name: massage-animation;
+    animation-duration: 4s;
+}
+
+.massage-static{
+    width: 80%;
+    height: 20vh;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.input-static{
+    width: 40%;
+    height: 1em;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+
+.email-static{
+    width: 60%;
+    height: 1em;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+
+.contact {
+    width: 40%;
+    height: 65%;
+    margin-top: 5%;
+    position: absolute;
+    left: 0;
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    /* background-color: green; */
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.picture{
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center
+}
+
+.car{
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.sun-static{
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.sun{
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    -webkit-animation-name: sun-animation;
+    -webkit-animation-duration: 4s;
+    /* -webkit-animation-delay: 2s;  */
+    animation-name: sun-animation;
+    animation-duration: 4s;
+    /* animation-delay: 2s; */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline:none;
+}
+
+.icons{
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 1vw;
+}
+
+.icon{
+    margin: 1vh;
+    transition: transform 0.3s;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+}
+  
+@-webkit-keyframes sun-animation {
+    0%   {bottom:-50%;}
+    100% {bottom:0;}
+}
+
+@keyframes sun-animation {
+    0%   {bottom:-50%;}
+    100% {bottom:0;}
+}
+
+@-webkit-keyframes massage-animation {
+    0%   {width:0%;}
+    100% {width:80%;}
+}
+
+@keyframes massage-animation {
+    0%   {width:0%;}
+    100% {width:80%;}
+}
+
+@-webkit-keyframes email-animation {
+    0%   {width:0%;}
+    100% {width:60%;}
+}
+
+@keyframes email-animation {
+    0%   {width:0%;}
+    100% {width:60%;}
+}
+
+@-webkit-keyframes input-animation {
+    0%   {width:0%;}
+    100% {width:40%;}
+}
+
+@keyframes input-animation {
+    0%   {width:0%;}
+    100% {width:40%;}
+}
