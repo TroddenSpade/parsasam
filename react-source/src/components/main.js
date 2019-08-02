@@ -45,7 +45,7 @@ export default class Main extends Component {
             <About/>
             <Projects/>
             <Skills/>
-            <Contact/>
+            <Contact getPage={this.getPage}/>
           </ReactPageScroller>
         </div>
       </div>
