@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Neon';
+    font-style: normal;
+    src: url('../../assets/fonts/Neon.ttf');
+}
+
 .reactPageScrollerComponent {
     display: flex;
     flex: 1;
@@ -14,5 +20,6 @@
 }
 
 h2{
+    font-family: "Neon";
     color: white;
 }
