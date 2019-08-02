@@ -13,7 +13,7 @@
     src: url('../assets/fonts/Neoneon.otf');
 }
 
-@import 'https://fonts.googleapis.com/css?family=Raleway';
+/* @import 'https://fonts.googleapis.com/css?family=Raleway'; */
 
 div.container
 {
@@ -66,13 +66,5 @@ div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
 }
 
 .img:hover{
-    transform: scale(1.1);
-}
-
-.icon{
-    margin: 1vh
-}
-
-.icon:hover{
     transform: scale(1.1);
 }
