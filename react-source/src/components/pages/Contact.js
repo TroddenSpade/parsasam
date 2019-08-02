@@ -17,7 +17,7 @@ export default class Contact extends React.Component{
     state={
         name:'',
         email:'',
-        massage:'',
+        message:'',
     }
     handleName = (event)=>{
         this.setState({
@@ -29,9 +29,9 @@ export default class Contact extends React.Component{
             email:event.target.value,
         })
     }
-    handleMassage = (event)=>{
+    handlemessage = (event)=>{
         this.setState({
-            massage:event.target.value,
+            message:event.target.value,
         })
     }
 
@@ -44,12 +44,12 @@ export default class Contact extends React.Component{
             document.getElementById('sun').className ='sun';
             document.getElementById('input').className ='input';
             document.getElementById('email').className ='email';
-            document.getElementById('massage').className ='massage';
+            document.getElementById('message').className ='message';
         }else{
             document.getElementById('sun').className ='sun-static';
             document.getElementById('input').className ='input-static';
             document.getElementById('email').className ='email-static';
-            document.getElementById('massage').className ='massage-static';         
+            document.getElementById('message').className ='message-static';         
         }
     }
 
@@ -61,23 +61,33 @@ export default class Contact extends React.Component{
                     <img className="car" src={car} alt=""/>
                 </div>
                 <div className="contact" >
+                    <div className="leave">
+                        <h1>
+                            Leave Me A Message
+                        </h1>
+                    </div>
                     <textarea id="input" type="text" placeholder="Your Name" value={this.state.name} onChange={this.handleName} />
                     <textarea id="email" type="text" placeholder="Your E-mail" value={this.state.email} onChange={this.handleEmail} />
-                    <textarea id="massage" type="text" placeholder="Massage" value={this.state.massage} onChange={this.handleMassage} />
+                    <textarea id="message" type="text" placeholder="Message" value={this.state.message} onChange={this.handlemessage} />
 
-                    <img className="submit" src={submit} alt="my image" onClick={this.handleButton} />
-                    <div className="icons">
-                        <a alt="Gihub" href="https://github.com/TroddenSpade" target="_blank">
-                            <img className="icon" src={github} alt=""/>
-                        </a> 
-                        <a alt="Telegram" href="https://t.me/modifies" target="_blank">
-                            <img className="icon" src={telegram} alt=""/>
-                        </a>
-                        <a alt="Steam" href="https://steamcommunity.com/profiles/76561198275819165" target="_blank">
-                            <img className="icon" src={steam} alt=""/>
-                        </a> 
+                    <div className="bottom">
+                        <img className="submit" src={submit} alt="my image" onClick={this.handleButton} />
+                        <div className="icons">
+                            <a alt="Gihub" href="https://github.com/TroddenSpade" target="_blank">
+                                <img className="icon" src={github} alt=""/>
+                            </a> 
+                            <a alt="Telegram" href="https://t.me/modifies" target="_blank">
+                                <img className="icon" src={telegram} alt=""/>
+                            </a>
+                            <a alt="Steam" href="https://steamcommunity.com/profiles/76561198275819165" target="_blank">
+                                <img className="icon" src={steam} alt=""/>
+                            </a> 
+                        </div>
                     </div>
                 </div>
+                <p className="copyright">   
+                    Copyright ©2019 - Parsa Sam
+                </p>
             </div>
         )
     }
