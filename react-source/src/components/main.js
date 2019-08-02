@@ -25,6 +25,10 @@ export default class Main extends Component {
     return this.state.page-1;
   }
 
+  componentDidMount(){
+    this.reactPageScroller.goToPage(4);
+  }
+
   render() {
     return (
       <div className="main">

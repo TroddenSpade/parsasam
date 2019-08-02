@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Neon';
+    font-style: normal;
+    src: url('../../assets/fonts/Neon.ttf');
+}
+
 .submit{
     width: 30%;
     transition: transform 0.5s;
+    justify-content: flex-start;
 }
 
 .submit:hover,
@@ -27,7 +34,7 @@
 
 .email {
     width: 60%;
-    height: 1em;
+    height: 1vmax;
     font-size: 1em;
     border-radius: 10px;
     padding: 10px;
@@ -39,7 +46,7 @@
 }
 .input {
     width: 40%;
-    height: 1em;
+    height: 1vmax;
     font-size: 1em;
     border-radius: 10px;
     padding: 10px;
@@ -49,19 +56,20 @@
     animation-name: input-animation;
     animation-duration: 4s;
 }
-.massage {
+.message {
     width: 80%;
     height: 20vh;
     font-size: 1em;
     border-radius: 10px;
     padding: 10px;
-    -webkit-animation-name: massage-animation;
+    resize: none;
+    -webkit-animation-name: message-animation;
     -webkit-animation-duration: 4s;
-    animation-name: massage-animation;
+    animation-name: message-animation;
     animation-duration: 4s;
 }
 
-.massage-static{
+.message-static{
     width: 80%;
     height: 20vh;
     font-size: 1em;
@@ -71,7 +79,7 @@
 
 .input-static{
     width: 40%;
-    height: 1em;
+    height: 1vmax;
     font-size: 1em;
     border-radius: 10px;
     padding: 10px;
@@ -80,7 +88,7 @@
 
 .email-static{
     width: 60%;
-    height: 1em;
+    height: 1vmax;
     font-size: 1em;
     border-radius: 10px;
     padding: 10px;
@@ -89,8 +97,7 @@
 
 .contact {
     width: 40%;
-    height: 65%;
-    margin-top: 5%;
+    height: 67%;
     position: absolute;
     left: 0;
     flex-direction: column;
@@ -99,6 +106,16 @@
     /* background-color: green; */
     justify-content: space-around;
     align-items: flex-end;
+}
+
+.bottom{
+    width: 80%;
+    height: 20%;
+    flex-direction: column;
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .picture{
@@ -156,6 +173,18 @@ button:focus {
 .icon:hover{
     transform: scale(1.1);
 }
+
+.copyright{
+    bottom: 0;
+    position: absolute;
+    font-family: "Neon";
+    color: white;
+}
+
+.leave{
+    font-family: "Neon";
+    color: white;
+}
   
 @-webkit-keyframes sun-animation {
     0%   {bottom:-50%;}
@@ -167,12 +196,12 @@ button:focus {
     100% {bottom:0;}
 }
 
-@-webkit-keyframes massage-animation {
+@-webkit-keyframes message-animation {
     0%   {width:0%;}
     100% {width:80%;}
 }
 
-@keyframes massage-animation {
+@keyframes message-animation {
     0%   {width:0%;}
     100% {width:80%;}
 }
