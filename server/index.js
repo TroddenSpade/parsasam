@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./src/configs/config').get();
+const PORT = config.PORT;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,7 +28,10 @@ app.post('/webapi/message',(req,res)=>{
         }
         res.status(200).json({
             sent:true,
-            user:doc
         });
     });
+});
+
+app.listen(PORT,()=>{
+    console.log("It's Working !")
 });
