@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import './pages.css' ;
 import './contact.css';
 import car from '../../assets/car.png';
@@ -8,6 +9,9 @@ import submit from '../../assets/submit.png';
 import github from '../../assets/GitHub-Mark-32px.png';
 import telegram from '../../assets/telegram.png';
 import steam from '../../assets/steam.png';
+
+const SERVER = '';
+const ADDRESS = ``;
 
 export default class Contact extends React.Component{
     constructor(props){
@@ -36,7 +40,28 @@ export default class Contact extends React.Component{
     }
 
     handleButton =()=>{
-        console.log("pressed")
+        document.getElementById('input').className ='input-static';
+        document.getElementById('email').className ='email-static';
+        document.getElementById('message').className ='message-static';
+
+        if(this.state.name.trim() == ''){
+            document.getElementById('input').className = 'input-red';
+        }
+        if(this.state.email.trim() == ''){
+            document.getElementById('email').className = 'email-red';
+        }
+        if(this.state.message.trim() == ''){
+            document.getElementById('message').className = 'message-red';
+        }
+        if(this.state.name.trim() != '' &&
+        this.state.email.trim() != '' &&
+        this.state.message.trim() != '' ){
+           axios.post(ADDRESS,this.state)
+           .then(()=>alert("Thanks for being awesome!\nI will reply by email as soon as possible"))
+           .catch((e)=>console.log(e)); 
+        }else{
+            alert("Please fill out the empty Fields");
+        }
     }
 
     componentWillReceiveProps(props){
@@ -66,9 +91,9 @@ export default class Contact extends React.Component{
                             Leave Me A Message
                         </h1>
                     </div>
-                    <textarea id="input" type="text" placeholder="Your Name" value={this.state.name} onChange={this.handleName} />
-                    <textarea id="email" type="text" placeholder="Your E-mail" value={this.state.email} onChange={this.handleEmail} />
-                    <textarea id="message" type="text" placeholder="Message" value={this.state.message} onChange={this.handlemessage} />
+                    <textarea id="input" type="text" placeholder="Your Name" value={this.state.name} onChange={this.handleName} required=""/>
+                    <textarea id="email" type="text" placeholder="Your E-mail" value={this.state.email} onChange={this.handleEmail} required=""/>
+                    <textarea id="message" type="text" placeholder="Message" value={this.state.message} onChange={this.handlemessage} required=""/>
 
                     <div className="bottom">
                         <img className="submit" src={submit} alt="my image" onClick={this.handleButton} />
