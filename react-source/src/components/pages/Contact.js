@@ -1,22 +1,25 @@
 import React from "react";
-import axios from 'axios';
+import io from 'socket.io-client';
 import './pages.css' ;
 import './contact.css';
 import car from '../../assets/car.png';
 import sun from '../../assets/sun.png';
 import submit from '../../assets/submit.png';
-
 import github from '../../assets/GitHub-Mark-32px.png';
 import telegram from '../../assets/telegram.png';
 import steam from '../../assets/steam.png';
 
-const SERVER = '';
-const ADDRESS = ``;
+const socket = io('http://localhost:3000/');
 
 export default class Contact extends React.Component{
     constructor(props){
         super(props);
-        console.log(props)
+        socket.on("DONE",(data)=>{
+            alert("Thanks for being awesome!\nI will reply by email as soon as possible");
+        })
+        socket.on("ERROR",(e)=>{
+            alert(e);
+        })
     }
     state={
         name:'',
@@ -56,9 +59,7 @@ export default class Contact extends React.Component{
         if(this.state.name.trim() != '' &&
         this.state.email.trim() != '' &&
         this.state.message.trim() != '' ){
-           axios.post(ADDRESS,this.state)
-           .then(()=>alert("Thanks for being awesome!\nI will reply by email as soon as possible"))
-           .catch((e)=>console.log(e)); 
+            socket.emit('submit',this.state);
         }else{
             alert("Please fill out the empty Fields");
         }
