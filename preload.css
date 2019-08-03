@@ -77,7 +77,7 @@
     width: 30px;
     position: relative;
     animation: pixelStretch 5s;
-
+    left: 570px;
 }
 
 .black{
@@ -113,11 +113,17 @@
 }
   
 @keyframes stretch {
-    0% {width: 0px;}
-    100% {width: 530px;}
+    0%   {width:0px;}
+    25% {width:200px;}
+    50% {width:400px;}
+    75% {width:500px;}
+    100% {width:600px;}
 }
 
 @keyframes pixelStretch {
     0%   {left:0px;}
-    100% {left:500px;}
+    25% {left:170px;}
+    50% {left:370px;}
+    75% {left:470px;}
+    100% {left:570px;}
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import io from 'socket.io-client';
+import axios from 'axios';
 import './pages.css' ;
 import './contact.css';
 import car from '../../assets/car.png';
@@ -9,18 +9,9 @@ import github from '../../assets/GitHub-Mark-32px.png';
 import telegram from '../../assets/telegram.png';
 import steam from '../../assets/steam.png';
 
-const socket = io('http://localhost:3000/');
+const SERVER = "https://hiimparsa.firebaseio.com/Messages.json";
 
 export default class Contact extends React.Component{
-    constructor(props){
-        super(props);
-        socket.on("DONE",(data)=>{
-            alert("Thanks for being awesome!\nI will reply by email as soon as possible");
-        })
-        socket.on("ERROR",(e)=>{
-            alert(e);
-        })
-    }
     state={
         name:'',
         email:'',
@@ -59,7 +50,9 @@ export default class Contact extends React.Component{
         if(this.state.name.trim() != '' &&
         this.state.email.trim() != '' &&
         this.state.message.trim() != '' ){
-            socket.emit('submit',this.state);
+            axios.post(SERVER,this.state)
+            .then(()=>alert("Thanks for being awesome!\nI will reply by email as soon as possible"))
+            .catch((e)=>alert(e+"\nThis service is not available from embargoed countries"));
         }else{
             alert("Please fill out the empty Fields");
         }
