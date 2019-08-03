@@ -2,69 +2,67 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
+        <title>Parsa Sam</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
         <link rel="shortcut icon" href="assets/favicon.ico"/>
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
         <meta name="theme-color" content="#000000"/>
+
+        <!-- React Links 
+            *******************
+        -->
         <link rel="manifest" href="/manifest.json"/>
-        <title>Parsa Sam</title>
         <link href="/static/css/main.0c8b25a0.chunk.css" rel="stylesheet">
+        <!-- 
+            *******************
+        -->
+        
         <link rel="stylesheet" href="audio/audio.css">
         <link rel="stylesheet/less" href="audio.less">
-        <style>
-            #myDIV{
-                background-color: #1b0b38;
-            }
-            .mystyle{
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background: url("assets/bg.jpg") center;
-                background-size: cover;
-            }
-            canvas {
-                margin: auto;
-            }
-            #root {
-                width: 100%;
-                height: 100%;
-                display: none;
-            }
-            #img {
-                transition: transform 0.5s;
-                position: absolute;
-                width: auto;
-                height: 50%;
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                text-align: center;
-                z-index: 1;
-            }
-            #img:focus {
-                outline:0;
-            }
-            #player{
-                position: absolute;
-                bottom: 5%;
-                right: 5%;
-                margin: auto;
-            }
-            #player:focus {
-                outline:0;
-            }
-            #img:hover {
-                transform: scale(1.2);
-            }
-        </style>
+        <link rel="stylesheet" href="./enter.css">
+        <link rel="stylesheet" href="./preload.css">
     </head>
     <body id="myDIV" class="mystyle">
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="overlay">
+            <p class="loading">Loading </p>
+            <div id="center">
+                <div id="main"></div>
+                <div class="rows">
+                    <div class="row" id="r-one">
+                        <span class="sq" id="sq-1"></span>
+                        <span class="sq" id="sq-2"></span>
+                        <span class="sq" id="sq-3"></span>
+                    </div>
+                    <div class="row" id="r-two">
+                        <span class="sq" id="sq-4"></span>
+                        <span class="sq" id="sq-5"></span>
+                        <span class="sq" id="sq-6"></span>
+                    </div>
+                    <div class="row" id="r-three">
+                        <span class="sq" id="sq-7"></span>
+                        <span class="sq" id="sq-8"></span>
+                        <span class="sq" id="sq-9"></span>
+                    </div>
+                    <div class="row" id="r-four">
+                        <span class="sq" id="sq-10"></span>
+                        <span class="sq" id="sq-11"></span>
+                        <span class="sq" id="sq-12"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="black"></div>
+        </div>
+        <script>
+            var overlay = document.getElementById("overlay");
+            window.addEventListener('load', function(){
+                overlay.style.display = 'none';
+                document.getElementById("img").className = 'welcome-img';
+            });
+        </script>
+
         <div id="start">
-            <script src="libraries/p5.js"></script>
-            <script src="libraries/p5.dom.js"></script>
-            <script src="libraries/p5.sound.js"></script>
             <script src="p5/start_screen/sketch.js"></script>
             <script type="text/javascript" src="p5/start_screen/Line.js"></script>
             <script type="text/javascript" src="p5/start_screen/Star.js"></script>
@@ -82,10 +80,18 @@
                 onclick="rootScreen();"
             />
         </div>
+
+        <!-- React div 
+            *******************
+        -->
         <div id="root"></div>
         <script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={1:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script>
         <script src="/static/js/2.eece86fb.chunk.js"></script>
         <script src="/static/js/main.97f7aff5.chunk.js"></script>
+        <!--
+            *******************
+        -->
+
         <div class="wrapper">
             <a href="#" class="player-controls">
                 <span class="play"></span>
@@ -94,7 +100,6 @@
             <audio id="player">
                 <source src="audio/music.mp3" type="audio/mp3">
             </audio>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script type="text/javascript" src="audio/audio.js"></script>
         </div>
     </body>
