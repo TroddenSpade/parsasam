@@ -1,0 +1,46 @@
+#myDIV{
+    background-color: #00000C;
+}
+.mystyle{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url("assets/bg.jpg") center;
+    background-size: cover;
+}
+canvas {
+    margin: auto;
+}
+#root {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.welcome-img {
+    transition: transform 0.5s;
+    position: absolute;
+    width: auto;
+    height: 50%;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 1;
+}
+.welcome-img:focus {
+    outline:0;
+}
+#player{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    margin: auto;
+}
+#player:focus {
+    outline:0;
+}
+.welcome-img:hover {
+    transform: scale(1.2);
+}
