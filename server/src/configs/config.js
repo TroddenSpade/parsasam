@@ -1,8 +1,8 @@
 const config = {
-    PORT:6666,
+    PORT:3000,
     DATABASE : "mongodb://localhost:27017/mywebpage",
     SECRET : "0000",
-    SERVER : "http://localhost:6666"
+    SERVER : "http://localhost:3000"
 }
 
 exports.get = function get(){
