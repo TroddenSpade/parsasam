@@ -2,17 +2,17 @@ var lines = [];
 var stars = [];
 
 let hLines = 60;
-let nStars = 100;
+let nStars = 80;
 
 p5.disableFriendlyErrors = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  var render = sqrt(532/54*windowHeight);
-  for (var i = 0; i < 10; i++) {
-    lines[i] = new Line(i*render/30);
+  var render = sqrt((532 / 54) * windowHeight);
+  for (var i = 0; i < 6; i++) {
+    lines[i] = new Line((i * render) / 30);
   }
-  lines[0]= new Line(0);
+  lines[0] = new Line(0);
   for (var i = 0; i < nStars; i++) {
     stars[i] = new Star();
   }
@@ -20,11 +20,11 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  var render = sqrt(532/54*windowHeight);
-  for (var i = 0; i < 10; i++) {
-    lines[i] = new Line(i*render/30);
+  var render = sqrt((532 / 54) * windowHeight);
+  for (var i = 0; i < 6; i++) {
+    lines[i] = new Line((i * render) / 30);
   }
-  lines[0]= new Line(0);
+  lines[0] = new Line(0);
   for (var i = 0; i < nStars; i++) {
     stars[i] = new Star();
   }
@@ -33,7 +33,7 @@ function windowResized() {
 function draw() {
   clear();
   stroke(189, 34, 164);
-  line(0, height*548 / 1080, width, (height * 548) / 1080);
+  line(0, (height * 548) / 1080, width, (height * 548) / 1080);
   for (var i = 0; i < hLines; i++) {
     stroke(189, 34, 164);
     line(
@@ -56,6 +56,6 @@ function draw() {
   text("FPS: " + fps.toFixed(2), 10, height - 10);
 }
 
-function quit(){
+function quit() {
   remove();
 }
