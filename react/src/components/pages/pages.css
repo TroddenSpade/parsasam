@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Neon";
+  font-style: normal;
+  src: url("../../assets/fonts/Neon.ttf");
+}
+
+.reactPageScrollerComponent {
+  display: flex;
+  flex: 1;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 2ch;
+}
+
+h2 {
+  font-family: "Neon";
+  color: white;
+}
+
+.horizontal-scroll {
+  justify-content: flex-start;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.ver-page {
+  min-width: 100%;
+  height: 100%;
+}
+
+.one {
+  background-color: brown;
+  :100% ;
+  height: 100%;
+}
+
+.two {
+  background-color: gold;
+}
