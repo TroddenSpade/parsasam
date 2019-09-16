@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+  <HEAD>
+    <TITLE>404 Not Found</TITLE>
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+  </HEAD>
+  <body id="myDIV" class="error-bg">
+    <div id="start">
+      <img class="error" src="assets/errors/404.png" />
+    </div>
+  </body>
+</HTML>
