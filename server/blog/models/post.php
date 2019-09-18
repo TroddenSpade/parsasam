@@ -11,14 +11,15 @@ class Post{
     public $title;
     public $description;
     public $markdown;
- 
+    public $created_at;
+
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
     }
     
     //read products
-    public function read(){
+    public function read($off){
     
         // select all query
         $query = "SELECT
@@ -26,7 +27,9 @@ class Post{
                 FROM
                     " . $this->table_posts . " p
                 ORDER BY
-                    p.created_at DESC";
+                    p.id ASC
+                LIMIT 
+                    ". $off .", 5";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -35,6 +38,43 @@ class Post{
         $stmt->execute();
     
         return $stmt;
+    }
+
+    function readOne(){
+ 
+        // query to read single record
+        $query = "SELECT
+                    p.id, p.author, p.description, p.title, p.markdown, p.created_at
+                FROM
+                    " . $this->table_posts . " p
+                WHERE
+                    p.markdown = ?
+                LIMIT
+                    0,1";
+     
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+     
+        // bind id of product to be updated
+        $stmt->bindParam(1, $this->id);
+     
+        // execute query
+        try{
+            $stmt->execute();
+        }catch(Exception $e){
+            echo $e;
+        }
+
+        // get retrieved row
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+     
+        // set values to object properties
+        $this->id = $row['id'];
+        $this->author = $row['author'];
+        $this->title = $row['title'];
+        $this->description = $row['description'];
+        $this->markdown = $row['markdown'];
+        $this->created_at = $row['created_at'];
     }
  
     // create product

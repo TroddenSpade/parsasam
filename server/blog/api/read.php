@@ -13,9 +13,11 @@ $db = $database->getConnection();
  
 // initialize object
 $post = new Post($db);
+
+$off = isset($_GET['off']) ? $_GET['off'] : die();
  
 // query posts
-$stmt = $post->read();
+$stmt = $post->read($off);
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
