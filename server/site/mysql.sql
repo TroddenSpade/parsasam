@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2019 at 08:06 AM
+-- Generation Time: Sep 18, 2019 at 08:04 AM
 -- Server version: 5.5.63-MariaDB
 -- PHP Version: 5.6.40
 
@@ -19,22 +19,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `parsasam_blog`
+-- Database: `parsasam_contact`
 --
-CREATE DATABASE IF NOT EXISTS `parsasam_blog` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `parsasam_blog`;
+CREATE DATABASE IF NOT EXISTS `parsasam_contact` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `parsasam_contact`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Table structure for table `messages`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `author` varchar(256) NOT NULL,
-  `title` text NOT NULL,
-  `markdown` text NOT NULL,
-  `description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=100 ;
+  `name` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `message` text NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
