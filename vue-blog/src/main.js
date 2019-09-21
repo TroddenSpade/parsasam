@@ -1,8 +1,25 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import App from "./App.vue";
 
-Vue.config.productionTip = false
+import List from "./posts/list.json";
+import { routes } from "./routes";
+
+List.map(data => {
+  Vue.component(data.id, () => import(`./posts/${data.id}.md`));
+});
+
+Vue.use(VueRouter);
+Vue.config.productionTip = false;
+
+const router = new VueRouter({
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
+});
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: h => h(App)
+}).$mount("#app");
