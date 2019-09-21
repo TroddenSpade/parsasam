@@ -55,6 +55,9 @@ if($num>0){
  
     // tell the user no posts found
     echo json_encode(
-        array("message" => "No posts found.")
+        array(
+            "message" => "No posts found.",
+            "status"=>"404"
+        )
     );
 }

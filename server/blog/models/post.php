@@ -27,7 +27,7 @@ class Post{
                 FROM
                     " . $this->table_posts . " p
                 ORDER BY
-                    p.id ASC
+                    p.id DESC
                 LIMIT 
                     ". $off .", 5";
     

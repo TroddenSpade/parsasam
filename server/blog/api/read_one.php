@@ -47,6 +47,9 @@ else{
     http_response_code(404);
  
     // tell the user post does not exist
-    echo json_encode(array("message" => "Product does not exist."));
+    echo json_encode(array(
+        "message" => "Product does not exist.",
+        "status" => '404'
+    ));
 }
 ?>
