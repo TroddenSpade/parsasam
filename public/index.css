@@ -47,7 +47,7 @@ canvas {
 .welcome-img {
   transition: transform 0.5s;
   position: absolute;
-  max-width: 50vw;
+  max-width: 80vw;
   max-height: 50vh;
   top: 0;
   bottom: 0;
@@ -74,8 +74,8 @@ canvas {
 }
 
 #overlay {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -91,36 +91,10 @@ canvas {
   overflow: hidden;
 }
 
-.loading:after {
-  content: ".";
-  animation: dots 2s infinite;
-  -o-animation: dots 2s infinite;
-  -moz-animation: dots 2s infinite;
-  -webkit-animation: dots 2s infinite;
-}
-
-@keyframes dots {
-  0%,
-  20% {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
-  }
-  40% {
-    color: white;
-    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
-  }
-  60% {
-    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
-  }
-  80%,
-  100% {
-    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
-  }
-}
-
 #center {
-  width: 600px;
+  width: 50vw;
   height: 40px;
+  overflow: hidden;
   background: #00000c;
   border: 2px solid rgba(255, 255, 255, 1);
   border-radius: 5px;
@@ -129,13 +103,13 @@ canvas {
 
 #main {
   height: 40px;
-  width: 600px;
+  width: 50vw;
   background: #ff7dee;
   float: left;
-  animation: stretch 5s;
-  -o-animation: stretch 5s;
-  -webkit-animation: stretch 5s;
-  -moz-animation: stretch 5s;
+  animation: stretch 10s;
+  -o-animation: stretch 10s;
+  -webkit-animation: stretch 10s;
+  -moz-animation: stretch 10s;
   margin-bottom: 15px;
   flex-direction: column;
   position: absolute;
@@ -145,11 +119,11 @@ canvas {
   height: 40px;
   width: 30px;
   position: relative;
-  animation: pixelStretch 5s;
-  -moz-animation: pixelStretch 5s;
-  -o-animation: pixelStretch 5s;
-  -webkit-animation: pixelStretch 5s;
-  left: 570px;
+  animation: pixelStretch 10s;
+  -moz-animation: pixelStretch 10s;
+  -o-animation: pixelStretch 10s;
+  -webkit-animation: pixelStretch 10s;
+  left: 50vw;
 }
 
 .black {
@@ -200,71 +174,17 @@ canvas {
   0% {
     width: 0px;
   }
-  25% {
-    width: 200px;
+  40% {
+    width: 10vw;
   }
   50% {
-    width: 400px;
+    width: 30vw;
   }
   75% {
-    width: 500px;
+    width: 40vw;
   }
   100% {
-    width: 600px;
-  }
-}
-
-@-o-keyframes stretch {
-  0% {
-    width: 0px;
-  }
-  25% {
-    width: 200px;
-  }
-  50% {
-    width: 400px;
-  }
-  75% {
-    width: 500px;
-  }
-  100% {
-    width: 600px;
-  }
-}
-
-@-moz-keyframes stretch {
-  0% {
-    width: 0px;
-  }
-  25% {
-    width: 200px;
-  }
-  50% {
-    width: 400px;
-  }
-  75% {
-    width: 500px;
-  }
-  100% {
-    width: 600px;
-  }
-}
-
-@-webkit-keyframes stretch {
-  0% {
-    width: 0px;
-  }
-  25% {
-    width: 200px;
-  }
-  50% {
-    width: 400px;
-  }
-  75% {
-    width: 500px;
-  }
-  100% {
-    width: 600px;
+    width: 50vw;
   }
 }
 
@@ -272,70 +192,16 @@ canvas {
   0% {
     left: 0px;
   }
-  25% {
-    left: 170px;
+  40% {
+    left: 10vw;
   }
   50% {
-    left: 370px;
+    left: 30vw;
   }
   75% {
-    left: 470px;
+    left: 40vw;
   }
   100% {
-    left: 570px;
-  }
-}
-
-@-o-keyframes pixelStretch {
-  0% {
-    left: 0px;
-  }
-  25% {
-    left: 170px;
-  }
-  50% {
-    left: 370px;
-  }
-  75% {
-    left: 470px;
-  }
-  100% {
-    left: 570px;
-  }
-}
-
-@-moz-keyframes pixelStretch {
-  0% {
-    left: 0px;
-  }
-  25% {
-    left: 170px;
-  }
-  50% {
-    left: 370px;
-  }
-  75% {
-    left: 470px;
-  }
-  100% {
-    left: 570px;
-  }
-}
-
-@-webkit-keyframes pixelStretch {
-  0% {
-    left: 0px;
-  }
-  25% {
-    left: 170px;
-  }
-  50% {
-    left: 370px;
-  }
-  75% {
-    left: 470px;
-  }
-  100% {
-    left: 570px;
+    left: 50vw;
   }
 }
