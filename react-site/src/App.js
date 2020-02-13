@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
 
-import Main from './components/main.js'; 
+import Main from "./components/Main";
+import TitleBar from "./components/TitleBar";
+import Test from "./components/Test";
 
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      loading:true
-    }
-  }
-  render() {
-    if(this.state.loading) return null;
-    return (
-      <div className="App">
-        <Main/>
-      </div>
-    );
-  }
-  componentDidMount(){
-    this.setState({
-      loading:false,
-    })
-  }
+function App() {
+  return (
+    <div>
+      <TitleBar />
+      <Main />
+      <Test />
+    </div>
+  );
 }
 
 export default App;
