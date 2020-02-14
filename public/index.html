@@ -23,83 +23,103 @@
     <link rel="stylesheet" href="audio/audio.css" />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body id="myDIV" class="mystyle">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="overlay">
-      <p class="loading">Loading</p>
-      <div id="center">
-        <div id="main"></div>
-        <div class="rows">
-          <div class="row" id="r-one">
-            <span class="sq" id="sq-1"></span>
-            <span class="sq" id="sq-2"></span>
-            <span class="sq" id="sq-3"></span>
-          </div>
-          <div class="row" id="r-two">
-            <span class="sq" id="sq-4"></span>
-            <span class="sq" id="sq-5"></span>
-            <span class="sq" id="sq-6"></span>
-          </div>
-          <div class="row" id="r-three">
-            <span class="sq" id="sq-7"></span>
-            <span class="sq" id="sq-8"></span>
-            <span class="sq" id="sq-9"></span>
-          </div>
-          <div class="row" id="r-four">
-            <span class="sq" id="sq-10"></span>
-            <span class="sq" id="sq-11"></span>
-            <span class="sq" id="sq-12"></span>
+  <body>
+    <div id="top-sun"></div>
+    <div id="middle-fade"></div>
+    <div id="main-div" class="main-class">
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="overlay">
+        <p class="loading">Loading</p>
+        <div id="center">
+          <div id="main"></div>
+          <div class="rows">
+            <div class="row" id="r-one">
+              <span class="sq" id="sq-1"></span>
+              <span class="sq" id="sq-2"></span>
+              <span class="sq" id="sq-3"></span>
+            </div>
+            <div class="row" id="r-two">
+              <span class="sq" id="sq-4"></span>
+              <span class="sq" id="sq-5"></span>
+              <span class="sq" id="sq-6"></span>
+            </div>
+            <div class="row" id="r-three">
+              <span class="sq" id="sq-7"></span>
+              <span class="sq" id="sq-8"></span>
+              <span class="sq" id="sq-9"></span>
+            </div>
+            <div class="row" id="r-four">
+              <span class="sq" id="sq-10"></span>
+              <span class="sq" id="sq-11"></span>
+              <span class="sq" id="sq-12"></span>
+            </div>
           </div>
         </div>
+        <div class="black"></div>
       </div>
-      <div class="black"></div>
-    </div>
-    <script>
-      var overlay = document.getElementById("overlay");
-      window.addEventListener("load", function() {
-        overlay.style.display = "none";
-        document.getElementById("img").className = "welcome-img";
-      });
-    </script>
-
-    <div id="start">
-      <script type="text/javascript" src="p5/start-screen/Line.js"></script>
-      <script type="text/javascript" src="p5/start-screen/Star.js"></script>
-      <script src="p5/start-screen/sketch.js"></script>
       <script>
-        function rootScreen() {
-          document.getElementById("root").style.display = "block";
-          document.getElementById("start").style.display = "none";
-          var element = document.getElementById("myDIV");
-          element.classList.remove("mystyle");
-          quit();
-        }
+        var overlay = document.getElementById("overlay");
+        window.addEventListener("load", function() {
+          overlay.style.display = "none";
+          document.getElementById("img").className = "welcome-img";
+        });
       </script>
-      <input
-        id="img"
-        type="image"
-        src="assets/welcome.png"
-        onclick="rootScreen();"
-      />
-    </div>
 
-    <!-- React div 
+      <div id="start">
+        <script type="text/javascript" src="p5/start-screen/Line.js"></script>
+        <script type="text/javascript" src="p5/start-screen/Star.js"></script>
+        <script src="p5/start-screen/sketch.js"></script>
+        <script>
+          function rootScreen() {
+            document.getElementById("middle-fade").style.display = "block";
+            document.getElementById("top-sun").style.display = "block";
+            window.scrollTo(0, document.body.scrollHeight);
+
+            document.getElementById("root").style.display = "block";
+            document.getElementById("start").style.display = "none";
+            var element = document.getElementById("main-div");
+
+            setTimeout(() => {
+              window.scrollTo({
+                top: 100,
+                behavior: "smooth"
+              });
+            }, 200);
+
+            setTimeout(() => {
+              element.classList.remove("main-class");
+              quit();
+              document.getElementById("middle-fade").style.display = "none";
+              document.getElementById("top-sun").style.display = "none";
+            }, 1000);
+          }
+        </script>
+        <input
+          id="img"
+          type="image"
+          src="assets/welcome.png"
+          onclick="rootScreen();"
+        />
+      </div>
+
+      <!-- React div 
             *******************
         -->
 
-    <!--
+      <!--
             *******************
         -->
 
-    <div class="wrapper">
-      <a href="#" class="player-controls">
-        <span class="play"></span>
-        <span class="pause"></span>
-      </a>
-      <audio id="player">
-        <source src="audio/music.mp3" type="audio/mp3" />
-      </audio>
-      <script type="text/javascript" src="audio/audio.js"></script>
+      <div class="wrapper">
+        <a href="#" class="player-controls">
+          <span class="play"></span>
+          <span class="pause"></span>
+        </a>
+        <audio id="player">
+          <source src="audio/music.mp3" type="audio/mp3" />
+        </audio>
+        <script type="text/javascript" src="audio/audio.js"></script>
+      </div>
     </div>
   </body>
 </html>

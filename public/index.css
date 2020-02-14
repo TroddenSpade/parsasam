@@ -4,12 +4,32 @@
   src: url("./assets/ARCADECLASSIC.TTF");
 }
 
-#myDIV {
-  background-color: #00000c;
-}
-.mystyle {
+body {
   margin: 0;
   padding: 0;
+}
+
+#main-div {
+  background-color: #1c1c1c;
+}
+
+#top-sun {
+  display: none;
+  height: 100vh;
+  background-image: url(../assets/sun.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #1c1c1c;
+}
+
+#middle-fade {
+  display: none;
+  height: 200vh;
+  background-image: linear-gradient(#1c1c1c, #000);
+}
+
+.main-class {
   overflow: hidden;
   background: url("assets/bg.jpg") center;
   background-size: cover;
@@ -39,14 +59,16 @@
 canvas {
   margin: auto;
 }
+
 #root {
   width: 100%;
   height: 100%;
   display: none;
 }
+
 .welcome-img {
   transition: transform 0.5s;
-  position: absolute;
+  position: fixed;
   max-width: 80vw;
   max-height: 50vh;
   top: 0;
@@ -57,18 +79,11 @@ canvas {
   text-align: center;
   z-index: 1;
 }
+
 .welcome-img:focus {
   outline: 0;
 }
-#player {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  margin: auto;
-}
-#player:focus {
-  outline: 0;
-}
+
 .welcome-img:hover {
   transform: scale(1.1);
 }
