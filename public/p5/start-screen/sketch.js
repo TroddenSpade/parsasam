@@ -7,7 +7,8 @@ let nStars = 80;
 p5.disableFriendlyErrors = true;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  var canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent("main-div");
   var render = sqrt((532 / 54) * windowHeight);
   for (var i = 0; i < 6; i++) {
     lines[i] = new Line((i * render) / 30);
