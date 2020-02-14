@@ -1,6 +1,6 @@
 .wrapper {
   display: block;
-  position: absolute;
+  position: fixed;
   bottom: 3%;
   right: 3%;
 }
