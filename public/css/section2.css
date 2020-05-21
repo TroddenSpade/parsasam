@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Abel&display=swap");
+
+.s2-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Abel", sans-serif;
+  flex-flow: row wrap;
+  font-size: 1.3em;
+  color: white;
+  flex-direction: column;
+}
+
+.s2-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  flex-direction: row;
+  height: calc(100% - 200px);
+}
+
+.s2-image {
+  height: 100%;
+  width: 70%;
+}
+
+.s2-left {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s2-bio {
+  padding: 20px;
+  margin: 0;
+}
+
+.s2-right {
+  width: 600px;
+}
+
+.nyan {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.s2-title {
+  font-family: "Bayshore";
+  font-size: 2.5em;
+  padding: 0px 20px;
+  margin: 0;
+  text-shadow: 0 0 1px #fff, 0 0 2px #ff6cff, 0 0 3px #ff6cff, 0 0 5px #fff;
+}
+
+.s2-title > h1 {
+  padding: 0;
+}
+
+#particles-js canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  background-color: #111111;
+}

@@ -1,0 +1,289 @@
+.s1 {
+  background-image: url(../assets/sun.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  perspective: 50px;
+}
+
+#inner {
+  width: 90vw;
+  height: 80vh;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}
+
+#svg-layer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}
+
+#p-1,
+#p-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards;
+}
+
+#p-2,
+#p-2-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 0.4s;
+}
+
+#a1-1,
+#a1-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 0.8s;
+}
+
+#a1-2,
+#a1-2-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 1.3s;
+}
+
+#r-1,
+#r-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 1.5s;
+}
+
+#r-2,
+#r-2-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 1.7s;
+}
+
+#r-3,
+#r-3-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 2.2s;
+}
+
+#s-1,
+#s-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 2.2s;
+}
+
+#a2-1,
+#a2-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 2.5s;
+}
+
+#a2-2,
+#a2-2-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 3s;
+}
+
+#sam-s-1,
+#sam-s-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 3s;
+}
+
+#sam-a-1,
+#sam-a-1-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 3s;
+}
+
+#sam-a-2-3,
+#sam-a-2-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: letter-animation 1s linear forwards 3.5s;
+}
+
+#sam-m-1,
+#sam-m-1-2 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: letter-animation-2 1s linear forwards 3.6s;
+}
+
+@keyframes letter-animation-2 {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes letter-animation {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#anchors-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#link-anchors {
+  font-family: Bayshore;
+  font-size: 2.5em;
+  min-width: 50vw;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.anchor-border {
+  animation: fadeInDown 5s forwards;
+  animation-timing-function: ease-in-out;
+  display: inline-block;
+}
+
+.link-anchor {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.anchor-border :hover {
+  animation: hoverPink 0.5s forwards;
+}
+
+.link-anchor:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffbaff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+  transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+}
+
+.link-anchor:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@keyframes hoverPink {
+  100% {
+    text-shadow: 0 0 1px #fff, 0 0 2px #ff6cff, 0 0 3px #ff6cff, 0 0 5px #fff;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  60% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-downs {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  right: 0;
+  bottom: 3%;
+  left: 0;
+  margin: auto;
+  width: 34px;
+  height: 55px;
+  animation: fadeIn 5s;
+}
+
+.mousey {
+  width: 2vh;
+  padding: 0px 1px;
+  height: 4vh;
+  border: 2px solid #00ffff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+}
+
+.scroller {
+  width: 2px;
+  height: 7px;
+  border-radius: 25%;
+  background-color: #00ffff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(13px);
+    opacity: 0;
+  }
+}
