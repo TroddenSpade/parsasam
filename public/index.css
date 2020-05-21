@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 @font-face {
-  font-family: "ARCADECLASSIC";
-  font-style: normal;
-  src: url("./assets/ARCADECLASSIC.TTF");
+  font-family: "Bayshore";
+  src: url(./assets/Bayshore.ttf);
 }
 
 body {
@@ -19,14 +20,14 @@ body {
   background-image: url(../assets/sun.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-color: #1c1c1c;
 }
 
 #middle-fade {
   display: none;
   height: 200vh;
-  background-image: linear-gradient(#1c1c1c, #000);
+  background-image: linear-gradient(#111111, #000);
 }
 
 .main-class {
@@ -35,38 +36,17 @@ body {
   background-size: cover;
 }
 
-.error-bg {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: url("assets/bg-error.jpg") center;
-  background-size: cover;
-}
-
-.error {
-  left: 0;
-  right: 0;
-  position: absolute;
-  max-height: 70vh;
-  max-width: 100vw;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1;
-}
-
 canvas {
   margin: auto;
 }
 
-#root {
+#fullpage {
   width: 100%;
   height: 100%;
   display: none;
 }
 
-.welcome-img {
+#welcome-img {
   transition: transform 0.5s;
   position: fixed;
   max-width: 80vw;
@@ -80,12 +60,16 @@ canvas {
   z-index: 1;
 }
 
-.welcome-img:focus {
+#welcome-img:focus {
   outline: 0;
 }
 
-.welcome-img:hover {
+#welcome-img:hover {
   transform: scale(1.1);
+}
+
+.fade {
+  animation: fade 0.8s forwards;
 }
 
 #overlay {
@@ -100,7 +84,7 @@ canvas {
   position: fixed;
   left: 0;
   top: 0;
-  font-family: "ARCADECLASSIC";
+  font-family: "Press Start 2P", cursive;
   color: white;
   font-size: 30px;
   overflow: hidden;
@@ -218,5 +202,14 @@ canvas {
   }
   100% {
     left: 50vw;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
